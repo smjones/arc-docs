@@ -24,7 +24,7 @@ pi:    # can use array (if all yes) or hash here
 author:
       -
         ins: S. Jones
-        name: Steven Jones
+        name: Steven M Jones
         org: DMARC.org
         street: 2419 McGee Avenue
         city: Berkeley

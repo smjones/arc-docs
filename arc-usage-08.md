@@ -1,8 +1,8 @@
 ---
 title: Recommended Usage of the Authenticated Received Chain (ARC)
 abbrev: ARC-USAGE
-docname: draft-ietf-dmarc-arc-usage-07
-date: 2019-04-23
+docname: draft-ietf-dmarc-arc-usage-08
+date: 2019-10-22
 
 # stand_alone: true
 

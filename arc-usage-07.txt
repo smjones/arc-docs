@@ -977,12 +977,12 @@ Appendix D.  Comments and Feedback
    https://datatracker.ietf.org/wg/dmarc .
 
    Readers looking for general information about ARC may refer to the
-   website https://arc-spec.org , or to the mailing list arc-
-   discuss@dmarc.org [10].
+   website https://arc-spec.org , or to the arc-discuss@dmarc.org [10]
+   mailing list at http://lists.dmarc.org/mailman/listinfo/arc-discuss .
 
 Authors' Addresses
 
-   Steven Jones (editor)
+   Steven M Jones (editor)
    DMARC.org
    2419 McGee Avenue
    Berkeley, California  94703
