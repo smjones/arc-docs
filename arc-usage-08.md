@@ -31,7 +31,7 @@ author:
         region: California
         code: 94703
         country: USA
-        email: smj@crash.com
+        email: smj@dmarc.org
         role: editor
       -
         ins: K. Andersen
