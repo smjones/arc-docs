@@ -1,18 +1,18 @@
----
-title: Recommended Usage of the Authenticated Received Chain (ARC)
-abbrev: ARC-USAGE
-docname: draft-ietf-dmarc-arc-usage-10
-date: 2020-10-14
+%%%
+% title = "Recommended Usage of the Authenticated Received Chain (ARC)"
+% abbrev = "ARC-USAGE"
+% docname = "draft-ietf-dmarc-arc-usage-10"
+% date = "2020-11"
 
 # stand_alone: true
 
-ipr: trust200902
-area: art
-wg: DMARC Working Group
-submission: IETF
-cat: info
+% ipr = "trust200902"
+% area = "art"
+% workgroup = "DMARC Working Group"
+% submission = "IETF"
+% cat = "info"
 
-coding: utf-8
+% coding = "utf-8"
 pi:    # can use array (if all yes) or hash here
 #  - toc
 #  - sortrefs
@@ -21,28 +21,27 @@ pi:    # can use array (if all yes) or hash here
   sortrefs:   # defaults to yes
   symrefs: yes
 
-author:
-      -
-        ins: S. Jones
-        name: Steven M Jones
-        org: DMARC.org
-        street: 2419 McGee Avenue
-        city: Berkeley
-        region: California
-        code: 94703
-        country: USA
-        email: smj@dmarc.org
-        role: editor
-      -
-        ins: K. Andersen
-        name: Kurt Andersen
-        org: LinkedIn
-        street: 2029 Stierlin Ct.
-        city: Mountain View
-        region: California
-        code: 94043
-        country: USA
-        email: kurta@linkedin.com
+% [[author]]
+%        ins = "S. Jones"
+%        fullname = "Steven M Jones"
+%        org = "DMARC.org"
+%        street = "2419 McGee Avenue"
+%        city = "Berkeley"
+%        region = "California"
+%        code = "94703"
+%        country = "USA"
+%        [author.address] email = "smj@dmarc.org"
+%        role = "editor"
+% [[author]]
+%        ins = "K. Andersen"
+%        name = "Kurt Andersen"
+%        org = "LinkedIn"
+%        street = "2029 Stierlin Ct."
+%        city = "Mountain View"
+%        region = "California"
+%        code = "94043"
+%        country = "USA"
+%        [author.address] email = "kurta@linkedin.com"
 
 normative:
   RFC5321:
@@ -92,7 +91,9 @@ informative:
 entity:
       SELF: "[I-D.ARC-USAGE]"
 
---- abstract
+%%%
+
+.# Abstract
 
 The Authenticated Received Chain (ARC) provides an authenticated
 "chain of custody" for a message, allowing each entity that handles
@@ -103,14 +104,14 @@ handling these messages should interpret or utilize ARC results in
 making decisions about message disposition. This document will provide
 guidance in these areas.
 
---- middle
+{mainmatter}
 
 # Introduction
 
-The Authenticated Received Chain (ARC) {{RFC8617}} is intended to be
+The Authenticated Received Chain (ARC) [@RFC8617] is intended to be
 used by Internet Mail Handlers who forward or resend messages, with or
 without alterations, such that they will no longer pass the SPF
-{{RFC7208}}, DKIM {{RFC6376}}, and/or DMARC {{RFC7489}} mechanisms
+[@RFC7208], DKIM [@RFC6376], and/or DMARC [@RFC7489] mechanisms
 when evaluated by subsequent message handlers or the final
 recipient. In such cases ARC may provide useful information about the
 message before the forwarding and/or alterations took place, and
@@ -185,7 +186,7 @@ DMARC checks.
 
 ## What new headers are introduced by ARC?
 
-The following new headers are defined in {{RFC8617}} Section 4.1, "ARC Header Fields":
+The following new headers are defined in [@RFC8617] Section 4.1, "ARC Header Fields":
 
 * ARC-Seal
 * ARC-Message-Signature
@@ -193,16 +194,16 @@ The following new headers are defined in {{RFC8617}} Section 4.1, "ARC Header Fi
 
 Each time a message passes through an ARC Intermediary, an ARC Set
 consisting of these three headers will be attached to the
-message. More information about ARC Sets can be found in {{RFC8617}}
+message. More information about ARC Sets can be found in [@RFC8617]
 Section 4.2, "ARC Set." The entire collection of ARC Sets in a message
 is commonly referred to as the ARC Chain.
 
 
 ## Does ARC support Internationalized Email (EAI)?
 
-Changes to support EAI are inherited from DKIM {{RFC6376}} as updated
-by {{RFC8616}}, and Authentication-Results as updated in
-{{RFC8601}}. For more details, please refer to {{RFC8617}} Section
+Changes to support EAI are inherited from DKIM [@RFC6376] as updated
+by [@RFC8616], and Authentication-Results as updated in
+[@RFC8601]. For more details, please refer to [@RFC8617] Section
 4.1.4, "Internationalized Email (EAI)."
 
 
@@ -211,9 +212,9 @@ by {{RFC8616}}, and Authentication-Results as updated in
 Originally ARC only supported a single signing algorithm, but the
 DCRUP working group
 [https://datatracker.ietf.org/wg/dcrup/about](https://datatracker.ietf.org/wg/dcrup/about)
-expanded the set of supported algorithms available to DKIM {{RFC6376}}
-and derived protocols. {{RFC8463}} is a standards track document that
-adds the Edd25519-SHA256 signing algorithm to DKIM, and {{ARC-MULTI}}
+expanded the set of supported algorithms available to DKIM [@RFC6376]
+and derived protocols. [@RFC8463] is a standards track document that
+adds the Edd25519-SHA256 signing algorithm to DKIM, and [@ARC-MULTI]
 is adapting this work to allow ARC to support multiple signing
 algorithms.
 
@@ -285,7 +286,7 @@ some basis for adjusting local policy decisions.
 
 ## What error code(s) should be returned if an invalid ARC chain is detected during an SMTP transaction?
 
-According to {{RFC8617}} Section 5.2.2, a Validator MAY signal the
+According to [@RFC8617] Section 5.2.2, a Validator MAY signal the
 breakage during the SMTP transaction by returning the extended SMTP
 response code 5.7.29 "ARC validation failure" and corresponding SMTP
 basic response code. Since ARC failures are likely the be detected due
@@ -408,7 +409,7 @@ actor has verifiably identified themselves.
 
 ## What should an ARC Receiver/Validator do when multiple digital signature algorithms are used in an ARC chain?
 
-{{ARC-MULTI}} extends ARC to support multiple signing algorithms. It specifies Validator and Signer behavior, and describes a lifecycle for signing algorithm adoption and retirement.
+[@ARC-MULTI] extends ARC to support multiple signing algorithms. It specifies Validator and Signer behavior, and describes a lifecycle for signing algorithm adoption and retirement.
 
 
 
@@ -417,7 +418,7 @@ actor has verifiably identified themselves.
 ## What is an Intermediary under ARC?
 
 In the context of ARC, an Intermediary is typically an Administrative
-Management Domain {{RFC5598}} that is receiving a message,
+Management Domain [@RFC5598] that is receiving a message,
 potentially manipulating or altering it, and then passing it on to
 another ADMD for delivery. Common examples of Intermediaries are
 mailing lists, alumni or professional email address providers that
@@ -434,9 +435,9 @@ validate upon receipt.
 
 ### More specifically a participating ARC intermediary must do the following:
 
-1. Validate that the ARC chain, if one is already present in the message, is intact and well-formed. ({{RFC8617}} Section 5.2, "Validator Actions")
-2. Record the ARC status in an Authentication-Results header ({{RFC8601}})
-3. Generate a new ARC set and add it to the message. ({{RFC8617}} Section 5.1, "Sealer Actions")
+1. Validate that the ARC chain, if one is already present in the message, is intact and well-formed. ([@RFC8617] Section 5.2, "Validator Actions")
+2. Record the ARC status in an Authentication-Results header ([@RFC8601])
+3. Generate a new ARC set and add it to the message. ([@RFC8617] Section 5.1, "Sealer Actions")
 
 
 ## Should every MTA be an ARC participant?
@@ -506,7 +507,7 @@ discussion of such a broad topic is beyond the scope of this document.
 
 ## How should an ARC Intermediary handle a digital signature algorithm that it or other Intermediaries and Validators may not support?
 
-{{ARC-MULTI}} extends ARC to support multiple signing algorithms. It specifies Validator and Signer behavior, and describes a lifecycle for signing algorithm adoption and retirement.
+[@ARC-MULTI] extends ARC to support multiple signing algorithms. It specifies Validator and Signer behavior, and describes a lifecycle for signing algorithm adoption and retirement.
 
 
 
@@ -516,13 +517,13 @@ discussion of such a broad topic is beyond the scope of this document.
 
 Please visit the [http://arc-spec.org](http://arc-spec.org) web site, or join the arc-discuss mailing list at [http://lists.dmarc.org/mailman/listinfo/arc-discuss](http://lists.dmarc.org/mailman/listinfo/arc-discuss).
 
-To discuss details of the {{RFC8617}} specification itself, especially errata, please join the DMARC working group at [https://datatracker.ietf.org/wg/dmarc](https://datatracker.ietf.org/wg/dmarc).
+To discuss details of the [@RFC8617] specification itself, especially errata, please join the DMARC working group at [https://datatracker.ietf.org/wg/dmarc](https://datatracker.ietf.org/wg/dmarc).
 
 
 ## How/where can I test interoperabililty for my implementation?
 
 There have been numerous interoperability tests during the development
-of the ARC {{RFC8617}} specification. These tests are usually
+of the ARC [@RFC8617] specification. These tests are usually
 announced on both the arc-discuss mailing list at
 [http://lists.dmarc.org/mailman/listinfo/arc-discuss](http://lists.dmarc.org/mailman/listinfo/arc-discuss),
 and the DMARC working group at
@@ -589,12 +590,12 @@ This document does not have security considerations aside from those
 raised in the main content.
 
 
---- back
+{backmatter}
 
 # Glossary
 
 ADMD
-: Administrative Management Domain as used in {{RFC5598}} and similar
+: Administrative Management Domain as used in [@RFC5598] and similar
   references refers to a single entity operating one or more computers
   within one or more domain names under said entity’s control. One
   example might be a small company with a single server, handling
@@ -604,27 +605,27 @@ ADMD
   the university.
 
 ARC
-: ARC is an acronym: Authenticated Received Chain - see {{RFC8617}}
+: ARC is an acronym: Authenticated Received Chain - see [@RFC8617]
 
 ARC-Seal
-: An {{RFC5322}} message header field formed in compliance with the ARC
+: An [@RFC5322] message header field formed in compliance with the ARC
   specification. It includes certain content from all prior ARC
   participants, if there are any.
 
 ARC-Message-Signature (also abbreviated as "AMS")
-: An {{RFC5322}} message header field formed in compliance with the {{RFC8617}}
+: An [@RFC5322] message header field formed in compliance with the [@RFC8617]
   specification. It includes certain content about the message as it
   was received and manipulated by the intermediary who inserted it.
 
 ARC-Authentication-Results (also abbreviated as "AAR")
-: An {{RFC5322}} message header field formed in compliance with the {{RFC8617}}
+: An [@RFC5322] message header field formed in compliance with the [@RFC8617]
   specification. It includes certain content about the message as it
   was received by the intermediary.
 
 Authenticated Received Chain (ARC)
 : A system that allows a Message Receiver to identify Intermediaries
   or Message Handlers who have conveyed a particular message. For more
-  information see the Abstract of this document, or refer to {{RFC8617}}.
+  information see the Abstract of this document, or refer to [@RFC8617].
 
 Domain Naming System Block List (DNSBL)
 : This is a system widely used in email filtering services whereby
@@ -637,14 +638,14 @@ Email Service Provider (ESP)
 : An Email Service Provider is typically a vendor or partner firm that
  sends mail on behalf of another company. They may use email addresses
  in Internet domains belonging to the client or partner firm in
- various {{RFC5321}} fields or {{RFC5322}} message header fields of the messages
+ various [@RFC5321] fields or [@RFC5322] message header fields of the messages
  they send on their behalf.
 
 Intermediary
-: In the context of {{RFC8617}}, an Intermediary is typically an
-  Administrative Management Domain (per {{RFC5598}}) that is receiving
+: In the context of [@RFC8617], an Intermediary is typically an
+  Administrative Management Domain (per [@RFC5598]) that is receiving
   a message, potentially manipulating or altering it, and then passing
-  it on to another ADMD for delivery. Also see {{RFC7960}} for
+  it on to another ADMD for delivery. Also see [@RFC7960] for
   more information and discussion. Common examples of
   Intermediaries are mailing lists, alumni or professional email
   address providers like universities or professional organizations,
@@ -720,13 +721,13 @@ Request For Comment (RFC)
 RFC5321 - Simple Mail Transfer Protocol
 : This document describes the protocol used to transfer email messages
   between Message Transfer Agents (MTA) over a network. Link:
-  {{RFC5321}}
+  [@RFC5321]
 
 RFC5322 - Internet Message Format
 : This document describes the format of Internet email messages,
   including both the header fields within the message and various types of
   content within the message body. Link:
-  {{RFC5322}}
+  [@RFC5322]
 
 Validator
 : A Message Receiver that attempts to validate the ARC chain in a
@@ -751,7 +752,7 @@ list participants for their input.
 
 # Comments and Feedback
 
-Please address all comments, discussions,  and questions about this document, or about {{RFC8617}} itself, to the DMARC Working Group at [https://datatracker.ietf.org/wg/dmarc](https://datatracker.ietf.org/wg/dmarc).
+Please address all comments, discussions,  and questions about this document, or about [@RFC8617] itself, to the DMARC Working Group at [https://datatracker.ietf.org/wg/dmarc](https://datatracker.ietf.org/wg/dmarc).
 
 Readers looking for general information about ARC may refer to the website [https://arc-spec.org](https://arc-spec.org), or to the <arc-discuss@dmarc.org> mailing list at [http://lists.dmarc.org/mailman/listinfo/arc-discuss](http://lists.dmarc.org/mailman/listinfo/arc-discuss).
 
