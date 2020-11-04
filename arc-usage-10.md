@@ -28,9 +28,10 @@ coding = "utf-8"
 # symrefs = yes
 
 [[author]]
-  ins = "S. Jones"
+  initals = "S."
+  surname = "Jones"
   fullname = "Steven M Jones"
-  org = "DMARC.org"
+  organization = "DMARC.org"
   street = "2419 McGee Avenue"
   city = "Berkeley"
   region = "California"
@@ -41,9 +42,10 @@ coding = "utf-8"
     email = "smj@dmarc.org"
 
 [[author]]
-  ins = "K. Andersen"
+  initals = "K."
+  surname = "Andersen"
   name = "Kurt Andersen"
-  org = "LinkedIn"
+  organization = "LinkedIn"
   street = "2029 Stierlin Ct."
   city = "Mountain View"
   region = "California"
@@ -117,10 +119,10 @@ guidance in these areas.
 
 # Introduction
 
-The Authenticated Received Chain (ARC) [@RFC8617] is intended to be
+The Authenticated Received Chain (ARC) [@!RFC8617] is intended to be
 used by Internet Mail Handlers who forward or resend messages, with or
 without alterations, such that they will no longer pass the SPF
-[@RFC7208], DKIM [@RFC6376], and/or DMARC [@RFC7489] mechanisms
+[@!RFC7208], DKIM [@!RFC6376], and/or DMARC [@!RFC7489] mechanisms
 when evaluated by subsequent message handlers or the final
 recipient. In such cases ARC may provide useful information about the
 message before the forwarding and/or alterations took place, and
@@ -203,20 +205,37 @@ The following new headers are defined in [@RFC8617] Section 4.1, "ARC Header Fie
 
 Each time a message passes through an ARC Intermediary, an ARC Set
 consisting of these three headers will be attached to the
-message. More information about ARC Sets can be found in [@RFC8617]
+message. More information about ARC Sets can be found in [@!RFC8617]
 Section 4.2, "ARC Set." The entire collection of ARC Sets in a message
 is commonly referred to as the ARC Chain.
 
 
 ## Does ARC support Internationalized Email (EAI)?
 
-Changes to support EAI are inherited from DKIM [@RFC6376] as updated
-by [@RFC8616], and Authentication-Results as updated in
-[@RFC8601]. For more details, please refer to [@RFC8617] Section
+Changes to support EAI are inherited from DKIM [@!RFC6376] as updated
+by [@!RFC8616], and Authentication-Results as updated in
+[@!RFC8601]. For more details, please refer to [@RFC8617] Section
 4.1.4, "Internationalized Email (EAI)."
 
 
 ## Does ARC support multiple digital signature algorithms?
+
+<reference anchor='ARC-MULTI' target='https://tools.ietf.org/html/draft-ietf-dmarc-arc-multi-03'>
+  <front>
+     <title>Using Multiple Signing Algorithms with ARC</title>
+     <date year='2019' />
+     <author initials='K.' surname='Andersen' fullname='Kurt Andersen'>
+       <organization>LinkedIn</organization>
+     </author>
+     <author initials='S.' surname='Blank' fullname='Seth Blank'>
+       <organization>Valimail</organization>
+     </author>
+     <author initials='J.' surname='Levine' fullname='John Levine'>
+       <organization>Taugh Networks</organization>
+     </author>
+  </front>
+</reference>
+
 
 Originally ARC only supported a single signing algorithm, but the
 DCRUP working group
@@ -427,7 +446,7 @@ actor has verifiably identified themselves.
 ## What is an Intermediary under ARC?
 
 In the context of ARC, an Intermediary is typically an Administrative
-Management Domain [@RFC5598] that is receiving a message,
+Management Domain [@!RFC5598] that is receiving a message,
 potentially manipulating or altering it, and then passing it on to
 another ADMD for delivery. Common examples of Intermediaries are
 mailing lists, alumni or professional email address providers that
@@ -647,7 +666,7 @@ Email Service Provider (ESP)
 : An Email Service Provider is typically a vendor or partner firm that
  sends mail on behalf of another company. They may use email addresses
  in Internet domains belonging to the client or partner firm in
- various [@RFC5321] fields or [@RFC5322] message header fields of the messages
+ various [@!RFC5321] fields or [@!RFC5322] message header fields of the messages
  they send on their behalf.
 
 Intermediary
