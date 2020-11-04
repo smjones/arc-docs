@@ -44,13 +44,14 @@ coding = "utf-8"
 [[author]]
   initals = "K."
   surname = "Andersen"
-  name = "Kurt Andersen"
+  fullname = "Kurt Andersen"
   organization = "LinkedIn"
-  street = "2029 Stierlin Ct."
-  city = "Mountain View"
+  street = "1000 W. Maude Ave."
+  city = "Sunnyvale"
   region = "California"
   code = "94043"
   country = "USA"
+  role = "editor"
   [author.address] 
     email = "kurta@linkedin.com"
 
@@ -784,8 +785,6 @@ Please address all comments, discussions,  and questions about this document, or
 
 Readers looking for general information about ARC may refer to the website [https://arc-spec.org](https://arc-spec.org), or to the <arc-discuss@dmarc.org> mailing list at [http://lists.dmarc.org/mailman/listinfo/arc-discuss](http://lists.dmarc.org/mailman/listinfo/arc-discuss).
 
-
---- fluff
 
 <!--  LocalWords:  received header email DMARC authentication authenticated
 -->
