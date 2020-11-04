@@ -1,95 +1,104 @@
 %%%
-% title = "Recommended Usage of the Authenticated Received Chain (ARC)"
-% abbrev = "ARC-USAGE"
-% docname = "draft-ietf-dmarc-arc-usage-10"
-% date = "2020-11"
+title = "Recommended Usage of the Authenticated Received Chain (ARC)"
+abbrev = "ARC-USAGE"
+docname = "draft-ietf-dmarc-arc-usage-latest"
+#date = "2020-11"
 
-# stand_alone: true
+stand_alone = true
 
-% ipr = "trust200902"
-% area = "art"
-% workgroup = "DMARC Working Group"
-% submission = "IETF"
-% cat = "info"
+ipr = "trust200902"
+area = "art"
+workgroup = "DMARC Working Group"
+submission = "IETF"
+cat = "info"
 
-% coding = "utf-8"
-pi:    # can use array (if all yes) or hash here
-#  - toc
-#  - sortrefs
-#  - symrefs
-  toc: yes
-  sortrefs:   # defaults to yes
-  symrefs: yes
+[seriesInfo]
+status = "informational"
+name = "Internet-Draft"
+value = "draft-ietf-dmarc-arc-usage-latest"
+stream = "IETF"
 
-% [[author]]
-%        ins = "S. Jones"
-%        fullname = "Steven M Jones"
-%        org = "DMARC.org"
-%        street = "2419 McGee Avenue"
-%        city = "Berkeley"
-%        region = "California"
-%        code = "94703"
-%        country = "USA"
-%        [author.address] email = "smj@dmarc.org"
-%        role = "editor"
-% [[author]]
-%        ins = "K. Andersen"
-%        name = "Kurt Andersen"
-%        org = "LinkedIn"
-%        street = "2029 Stierlin Ct."
-%        city = "Mountain View"
-%        region = "California"
-%        code = "94043"
-%        country = "USA"
-%        [author.address] email = "kurta@linkedin.com"
+coding = "utf-8"
+# pi:    # can use array (if all yes) or hash here
+# #  - toc
+# #  - sortrefs
+# #  - symrefs
+# toc = yes
+# sortrefs = yes
+# symrefs = yes
 
-normative:
-  RFC5321:
-  RFC5322:
-  RFC5598:
-  RFC8601:
-  RFC8617:
+[[author]]
+  ins = "S. Jones"
+  fullname = "Steven M Jones"
+  org = "DMARC.org"
+  street = "2419 McGee Avenue"
+  city = "Berkeley"
+  region = "California"
+  code = "94703"
+  country = "USA"
+  role = "editor"
+  [author.address] 
+    email = "smj@dmarc.org"
 
-informative:
-  RFC6376:
-  RFC6377:
-  RFC7208:
-  RFC7489:
-  RFC7960: DMARC-INTEROP
-  RFC8301:
-  RFC8463:
-  RFC8616:
-  OAR:
-    target: https://tools.ietf.org/html/draft-kucherawy-original-authres-00
-    title: Original-Authentication-Results Header Field
-    author:
-      -
-        ins: M. Chew
-        name: Monica Chew
-      -
-        ins: M. Kucherawy
-        name: Murray Kucherawy
-    date: 2012-02-20
-  ENHANCED-STATUS: 
-    target: http://www.iana.org/assignments/smtp-enhanced-status-codes/smtp-enhanced-status-codes.xhtml
-    title: IANA SMTP Enhanced Status Codes
-  ARC-MULTI:
-    title: Using Multiple Signing Algorithms with ARC
-    target: https://tools.ietf.org/html/draft-ietf-dmarc-arc-multi-03
-    date: 2019-03
-    author:
-      -
-        ins: K. Andersen
-        name: Kurt Andersen
-      -
-        ins: S. Blank
-        name: Seth Blank
-      -
-        ins: J. Levine
-        name: John Levine
+[[author]]
+  ins = "K. Andersen"
+  name = "Kurt Andersen"
+  org = "LinkedIn"
+  street = "2029 Stierlin Ct."
+  city = "Mountain View"
+  region = "California"
+  code = "94043"
+  country = "USA"
+  [author.address] 
+    email = "kurta@linkedin.com"
 
-entity:
-      SELF: "[I-D.ARC-USAGE]"
+# normative:
+#   RFC5321:
+#   RFC5322:
+#   RFC5598:
+#   RFC8601:
+#   RFC8617:
+# 
+# informative:
+#   RFC6376:
+#   RFC6377:
+#   RFC7208:
+#   RFC7489:
+#   RFC7960: DMARC-INTEROP
+#   RFC8301:
+#   RFC8463:
+#   RFC8616:
+#   OAR:
+#     target: https://tools.ietf.org/html/draft-kucherawy-original-authres-00
+#     title: Original-Authentication-Results Header Field
+#     author:
+#       -
+#         ins: M. Chew
+#         name: Monica Chew
+#       -
+#         ins: M. Kucherawy
+#         name: Murray Kucherawy
+#     date: 2012-02-20
+#   ENHANCED-STATUS: 
+#     target: http://www.iana.org/assignments/smtp-enhanced-status-codes/smtp-enhanced-status-codes.xhtml
+#     title: IANA SMTP Enhanced Status Codes
+#   ARC-MULTI:
+#     title: Using Multiple Signing Algorithms with ARC
+#     target: https://tools.ietf.org/html/draft-ietf-dmarc-arc-multi-03
+#     date: 2019-03
+#     author:
+#       -
+#         ins: K. Andersen
+#         name: Kurt Andersen
+#       -
+#         ins: S. Blank
+#         name: Seth Blank
+#       -
+#         ins: J. Levine
+#         name: John Levine
+# 
+# entity:
+#       SELF: "[I-D.ARC-USAGE]"
 
 %%%
 
