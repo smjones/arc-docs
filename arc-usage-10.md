@@ -315,7 +315,7 @@ some basis for adjusting local policy decisions.
 
 ## What error code(s) should be returned if an invalid ARC chain is detected during an SMTP transaction?
 
-According to [@RFC8617] Section 5.2.2, a Validator MAY signal the
+According to [@RFC8617] Section 5.2.2, a Validator **MAY** signal the
 breakage during the SMTP transaction by returning the extended SMTP
 response code 5.7.29 "ARC validation failure" and corresponding SMTP
 basic response code. Since ARC failures are likely the be detected due
@@ -605,6 +605,12 @@ the scope of this document.
 At present there is no way for a message sender to request that
 intermediaries not employ ARC.
 
+# Known Implementations
+
+This section is moved over from [@RFC8617] as it is stripped in the 
+process of publishing from an I-D --> RFC.
+
+{{arc-impl.md}}
 
 # Considerations
 
